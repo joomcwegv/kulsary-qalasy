@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 560" role="img" aria-labelledby="title desc">
+  <title id="title">Құлсары қаласының схемалық картасы</title>
+  <desc id="desc">Қамыскөл көлінің жанындағы Құлсары қаласының орны мен негізгі жолдары белгіленген схемалық көрініс.</desc>
+  <defs>
+    <pattern id="grain" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="3" cy="4" r=".7" fill="#9eaa9f" opacity=".25"/>
+      <circle cx="15" cy="17" r=".6" fill="#9eaa9f" opacity=".23"/>
+    </pattern>
+  </defs>
+  <rect width="960" height="560" fill="#e5e9df"/>
+  <rect width="960" height="560" fill="url(#grain)"/>
+  <path d="M0 37c97-33 173-24 254 22 63 36 69 79 37 122-27 35-71 65-89 110-31 76-113 81-202 53V37Z" fill="#b5cfd1"/>
+  <path d="M0 55c106-31 156-15 220 28 42 28 53 56 36 90-20 39-60 67-76 112-18 50-88 62-180 46" fill="none" stroke="#d4e2dd" stroke-width="6" opacity=".7"/>
+  <path d="M27 0c31 33 45 54 53 96M121 0c-9 32-12 47 0 76M0 222c32-11 59-16 91-13" fill="none" stroke="#d7e3d8" stroke-width="4" opacity=".6"/>
+  <g fill="#d7dfd3" opacity=".82">
+    <path d="M288 80 365 65 403 111 334 140Z"/>
+    <path d="m493 28 87-9 67 62-89 32Z"/>
+    <path d="m647 122 115-26 83 64-131 50Z"/>
+    <path d="m743 351 129-5 88 78v89l-117-17Z"/>
+    <path d="m84 411 139-29 65 67-26 111H32Z"/>
+  </g>
+  <g fill="#cbd7ca" opacity=".78">
+    <rect x="353" y="171" width="45" height="25" transform="rotate(-14 353 171)"/>
+    <rect x="398" y="206" width="54" height="32" transform="rotate(-14 398 206)"/>
+    <rect x="465" y="224" width="48" height="29" transform="rotate(-14 465 224)"/>
+    <rect x="526" y="170" width="64" height="36" transform="rotate(-14 526 170)"/>
+    <rect x="569" y="238" width="45" height="32" transform="rotate(-14 569 238)"/>
+    <rect x="359" y="278" width="59" height="30" transform="rotate(-14 359 278)"/>
+    <rect x="449" y="295" width="47" height="29" transform="rotate(-14 449 295)"/>
+  </g>
+  <g fill="none" stroke-linecap="round" stroke-linejoin="round">
+    <path d="M-40 425C119 359 226 287 338 244c117-45 245-54 356-98C812 100 871 52 997 33" stroke="#c9c5b2" stroke-width="24"/>
+    <path d="M-40 425C119 359 226 287 338 244c117-45 245-54 356-98C812 100 871 52 997 33" stroke="#f9f7ee" stroke-width="17"/>
+    <path d="M390-40c14 115 17 199 62 276 52 91 115 173 174 362" stroke="#c9c5b2" stroke-width="21"/>
+    <path d="M390-40c14 115 17 199 62 276 52 91 115 173 174 362" stroke="#f9f7ee" stroke-width="14"/>
+  </g>
+  <g fill="none" stroke="#f7f6ef" stroke-width="7" stroke-linecap="round" opacity=".94">
+    <path d="M281 196c112 20 226 49 380 35"/>
+    <path d="M316 316c113-38 214-40 353-9"/>
+    <path d="M301 376c107-18 209-13 318 31"/>
+    <path d="M504 77c-18 100-32 186-18 302"/>
+    <path d="M582 76c-34 103-56 185-45 293"/>
+    <path d="M655 80c-36 91-49 178-31 289"/>
+    <path d="M215 478c104-71 191-96 287-110"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="2" fill="#69838a">
+    <text x="28" y="166">ҚАМЫСКӨЛ</text>
+    <text x="66" y="494" font-size="12" fill="#8a9486">АТЫРАУ БАҒЫТЫ</text>
+    <text x="700" y="468" font-size="12" fill="#8a9486">БЕЙНЕУ БАҒЫТЫ</text>
+  </g>
+  <text x="468" y="157" font-family="Arial, sans-serif" font-size="20" font-weight="700" letter-spacing="1.5" fill="#344b4d">ҚҰЛСАРЫ</text>
+  <circle cx="429" cy="166" r="18" fill="#e8ae58" opacity=".34"/>
+  <circle cx="429" cy="166" r="6" fill="#ba812f" stroke="#fffaf0" stroke-width="2"/>
+</svg>
