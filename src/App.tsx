@@ -50,6 +50,22 @@ function Brand({ onClick }: { onClick?: () => void }) {
   );
 }
 
+function BlueskyIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 568 501" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M123.121 33.664C188.241 82.553 258.281 181.68 284 234.873c25.719-53.192 95.759-152.32 160.879-181.209C491.503 13.978 560 3.23 560 76.537c0 14.678-8.384 123.279-13.307 140.852-19.123 68.272-88.759 85.736-150.771 75.249 108.318 18.528 135.589 79.467 76.216 140.407-71.189 73.073-162.772-18.423-182.723-58.077C282.809 361.764 280 348.618 280 348.618s-2.809 13.146-9.415 26.349c-19.951 39.654-111.534 131.15-182.723 58.077-59.373-60.94-32.102-121.879 76.216-140.407-62.012 10.487-131.648-6.977-150.771-75.249C8.384 199.816 0 91.215 0 76.537 0 3.23 68.497 13.978 123.121 33.664z" />
+    </svg>
+  );
+}
+
+function VkIcon({ size = 20, className = "" }: { size?: number; className?: string }) {
+  return (
+    <svg width={size} height={size} viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+      <path d="M12.785 16.248c-4.464 0-7.009-3.056-7.116-8.145h2.247c.074 3.736 1.719 5.318 3.024 5.644V8.103h2.115v3.224c1.294-.139 2.627-1.597 3.089-3.224h2.114c-.358 2.01-1.844 3.468-2.887 4.072 1.043.486 2.7 1.773 3.324 4.073h-2.327c-.489-1.527-1.706-2.709-3.324-2.871v2.871h-.455z"/>
+    </svg>
+  );
+}
+
 function SectionLabel({
   number,
   children,
@@ -282,11 +298,37 @@ function AppMain() {
 
   const socialLinks = [
     {
+      icon: BlueskyIcon,
+      platform: "BLUESKY · AT PROTOCOL (ЖАҢА ДӘУІР)",
+      title: lang === "kz" ? "Құлсары қауымдастығы (Bluesky)" : lang === "ru" ? "Сообщество Кульсары (Bluesky)" : "Kulsary Community on Bluesky",
+      detail: "@kulsary.bsky.social · #Qulsary ашық лентасы",
+      href: "https://bsky.app/search?q=kulsary",
+      badge: "NEW / ДЕЦЕНТРАЛИЗОВАННЫЙ",
+      color: "#0285FF",
+    },
+    {
+      icon: Send,
+      platform: "TELEGRAM / ЖЕДЕЛ АРНА",
+      title: lang === "kz" ? "Құлсары & Теңіз жедел жаңалықтары" : lang === "ru" ? "Кульсары & Тенгиз новости" : "Kulsary & Tengiz Telegram",
+      detail: "Төтенше жағдайлар, ауа райы, жұмыс орындары",
+      href: "https://t.me/s/kulsary",
+      color: "#229ED9",
+    },
+    {
+      icon: VkIcon,
+      platform: "VKONTAKTE (VK) / 1-КЕЗЕК",
+      title: lang === "kz" ? "«Подслушано Құлсары» / Хабарландырулар" : lang === "ru" ? "«Подслушано Кульсары» / Доска объявлений" : "Overheard in Kulsary (VK)",
+      detail: "Қалалық талқылаулар, автобекет, пәтер, сұрақ-жауап",
+      href: "https://vk.com/search?c%5Bsection%5D=communities&c%5Bq%5D=%D0%BA%D1%83%D0%BB%D1%8C%D1%81%D0%B0%D1%80%D1%8B",
+      color: "#4680C2",
+    },
+    {
       icon: Camera,
       platform: "INSTAGRAM / РЕСМИ",
       title: lang === "kz" ? "Құлсары қаласы әкімдігі" : lang === "ru" ? "Акимат города Кульсары" : "Kulsary City Akimat",
       detail: "@qulsary_qalasy_akimdigi",
       href: "https://www.instagram.com/qulsary_qalasy_akimdigi/",
+      color: "#E1306C",
     },
     {
       icon: Camera,
@@ -294,6 +336,7 @@ function AppMain() {
       title: lang === "kz" ? "Жылыой ауданы әкімдігі" : lang === "ru" ? "Акимат Жылыойского района" : "Zhylyoi District Akimat",
       detail: "@jylyoi_audany_akimdigi",
       href: "https://www.instagram.com/jylyoi_audany_akimdigi/",
+      color: "#E1306C",
     },
     {
       icon: Camera,
@@ -301,27 +344,7 @@ function AppMain() {
       title: lang === "kz" ? "Құлсары жаңалықтары" : lang === "ru" ? "Новости Кульсары" : "Kulsary News",
       detail: "@kulsary_ze",
       href: "https://www.instagram.com/kulsary_ze/",
-    },
-    {
-      icon: Radio,
-      platform: "ZELLO / ЖОЛ",
-      title: lang === "kz" ? "Жол және такси арналары" : lang === "ru" ? "Каналы дорог и такси" : "Road & Taxi Channels",
-      detail: lang === "kz" ? "Қолданбада «Құлсары» деп іздеңіз" : "Поиск «Кульсары» в приложении",
-      href: "https://zello.com/",
-    },
-    {
-      icon: SquarePlay,
-      platform: "YOUTUBE / БЕЙНЕ",
-      title: lang === "kz" ? "Құлсары туралы видеолар" : lang === "ru" ? "Видео о Кульсары" : "Videos about Kulsary",
-      detail: lang === "kz" ? "Деректі фильмдер мен қала шолулары" : "Документальные фильмы и обзоры",
-      href: `https://www.youtube.com/results?search_query=${encodeURIComponent("Құлсары қала")}`,
-    },
-    {
-      icon: Send,
-      platform: "TELEGRAM",
-      title: lang === "kz" ? "ТЖМ ресми арнасы" : lang === "ru" ? "Официальный канал МЧС" : "Emergency Telegram",
-      detail: lang === "kz" ? "Қауіпсіздік жедел ақпараты" : "Оперативная сводка безопасности",
-      href: "https://t.me/qr_tjm",
+      color: "#E1306C",
     },
     {
       icon: MessageCircle,
@@ -329,6 +352,23 @@ function AppMain() {
       title: "Жылыойсу байланысы",
       detail: lang === "kz" ? "Су қызметіне тікелей жазу" : "Чат аварийной службы воды",
       href: "https://wa.me/77751951767",
+      color: "#25D366",
+    },
+    {
+      icon: Radio,
+      platform: "ZELLO / ЖОЛ",
+      title: lang === "kz" ? "Жол және такси арналары" : lang === "ru" ? "Каналы дорог и такси" : "Road & Taxi Channels",
+      detail: lang === "kz" ? "Қолданбада «Құлсары» деп іздеңіз" : "Поиск «Кульсары» в приложении",
+      href: "https://zello.com/",
+      color: "#E8AE58",
+    },
+    {
+      icon: SquarePlay,
+      platform: "YOUTUBE / БЕЙНЕ",
+      title: lang === "kz" ? "Құлсары туралы видеолар" : lang === "ru" ? "Видео о Кульсары" : "Videos about Kulsary",
+      detail: lang === "kz" ? "Деректі фильмдер мен қала шолулары" : "Документальные фильмы и обзоры",
+      href: `https://www.youtube.com/results?search_query=${encodeURIComponent("Құлсары қала")}`,
+      color: "#FF0000",
     },
   ];
 
@@ -721,12 +761,113 @@ function AppMain() {
                 const Icon = item.icon;
                 return (
                   <a href={item.href} target="_blank" rel="noopener noreferrer" className="social-row" key={`${item.platform}-${item.title}`}>
-                    <span className="social-icon"><Icon size={21} strokeWidth={1.7} aria-hidden="true" /></span>
-                    <span className="social-row-copy"><small>{item.platform}</small><strong>{item.title}</strong><span>{item.detail}</span></span>
+                    <span className="social-icon" style={{ color: (item as any).color }}><Icon size={21} strokeWidth={1.7} aria-hidden="true" /></span>
+                    <span className="social-row-copy">
+                      <small style={{ color: (item as any).color, fontWeight: 800 }}>{item.platform}</small>
+                      <strong>{item.title}</strong>
+                      <span>{item.detail}</span>
+                    </span>
                     <ArrowUpRight className="social-arrow" size={21} strokeWidth={1.6} aria-hidden="true" />
                   </a>
                 );
               })}
+            </div>
+          </div>
+
+          {/* Interactive Bluesky & Community Tribune Banner */}
+          <div className="page-container" style={{ marginTop: "36px" }} data-reveal>
+            <div style={{
+              background: "linear-gradient(135deg, rgba(2, 133, 255, 0.12) 0%, rgba(16, 30, 34, 0.85) 100%)",
+              border: "1.5px solid rgba(2, 133, 255, 0.35)",
+              borderRadius: "16px",
+              padding: "28px 32px",
+              display: "flex",
+              flexWrap: "wrap",
+              alignItems: "center",
+              justifyContent: "space-between",
+              gap: "24px",
+              boxShadow: "0 10px 30px rgba(2, 133, 255, 0.08)",
+            }}>
+              <div style={{ maxWidth: "680px" }}>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                  <div style={{
+                    width: "38px",
+                    height: "38px",
+                    borderRadius: "10px",
+                    background: "#0285FF",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "center",
+                    color: "#ffffff",
+                    boxShadow: "0 4px 12px rgba(2, 133, 255, 0.4)",
+                  }}>
+                    <BlueskyIcon size={22} />
+                  </div>
+                  <div>
+                    <h3 style={{ fontSize: "18px", fontWeight: 800, margin: 0, color: "var(--deep-oil)" }}>
+                      Bluesky (AT Protocol) — Құлсарының ашық цифрлық мінбері 🦋
+                    </h3>
+                    <span style={{ fontSize: "11px", fontWeight: 700, color: "#0285FF", letterSpacing: "0.05em" }}>
+                      ДЕЦЕНТРАЛИЗАЦИЯЛАНҒАН АШЫҚ ЖЕЛІ · ЦЕНЗУРАСЫЗ &amp; ЖАРНАМАСЫЗ
+                    </span>
+                  </div>
+                </div>
+                <p style={{ fontSize: "13px", lineHeight: "1.6", color: "var(--muted)", margin: 0 }}>
+                  {lang === "kz"
+                    ? "Bluesky желісінде қазақша контент пен жергілікті қауымдастықты бірінші болып Құлсарыдан бастайық! Әрбір тұрғын #Qulsary немесе #Zhylyoi хештегімен ой-пікірін, қалалық жаңалықтар мен фотоларды еркін бөлісе алады."
+                    : lang === "ru"
+                    ? "Начнем развивать казахскоязычный контент и городское сообщество в децентрализованной сети Bluesky первыми из Кульсары! Делитесь мыслями, фото и новостями города с тегом #Qulsary."
+                    : "Pioneering the open AT Protocol network for Kulsary! Share town updates, community discussions, and stories using #Qulsary and #Zhylyoi without corporate algorithm locks."}
+                </p>
+              </div>
+
+              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px" }}>
+                <a
+                  href="https://bsky.app/intent/compose?text=%23Qulsary+%23Zhylyoi+%D2%9A%D2%B1%D0%BB%D1%81%D0%B0%D1%80%D1%8B+"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: "#0285FF",
+                    color: "#ffffff",
+                    padding: "11px 20px",
+                    borderRadius: "8px",
+                    fontSize: "13px",
+                    fontWeight: 800,
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "8px",
+                    boxShadow: "0 4px 14px rgba(2, 133, 255, 0.35)",
+                    transition: "transform 0.15s ease",
+                  }}
+                >
+                  <BlueskyIcon size={16} />
+                  <span>{lang === "kz" ? "#Qulsary деп жазу" : lang === "ru" ? "Написать с #Qulsary" : "Post to #Qulsary"}</span>
+                  <ArrowUpRight size={14} />
+                </a>
+
+                <a
+                  href="https://bsky.app/search?q=kulsary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  style={{
+                    background: "rgba(255, 255, 255, 0.12)",
+                    color: "var(--deep-oil)",
+                    border: "1px solid rgba(2, 133, 255, 0.4)",
+                    padding: "11px 18px",
+                    borderRadius: "8px",
+                    fontSize: "13px",
+                    fontWeight: 700,
+                    textDecoration: "none",
+                    display: "inline-flex",
+                    alignItems: "center",
+                    gap: "6px",
+                  }}
+                >
+                  <span>{lang === "kz" ? "Қалалық лентаны көру" : lang === "ru" ? "Смотреть ленту" : "View City Feed"}</span>
+                  <ArrowUpRight size={14} />
+                </a>
+              </div>
             </div>
           </div>
         </section>
