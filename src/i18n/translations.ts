@@ -137,6 +137,12 @@ export interface Translations {
     govRef: string;
     photoNote: string;
   };
+  theme: {
+    light: string;
+    dark: string;
+    nightMode: string;
+    dayMode: string;
+  };
 }
 
 export const translations: Record<Language, Translations> = {
@@ -328,6 +334,12 @@ export const translations: Record<Language, Translations> = {
       copyright: "Құлсары туралы ақпараттық визитка-сайт",
       govRef: "Ресми ақпаратты gov.kz сайтынан нақтылаңыз.",
       photoNote: "Нақты нысан фотолары: atyrau-heritage.kz, Visit Atyrau және Жылыой ауданы әкімдігі.",
+    },
+    theme: {
+      light: "Күндізгі",
+      dark: "Түнгі",
+      nightMode: "Түн режимі",
+      dayMode: "Күндізгі режим",
     },
   },
   ru: {

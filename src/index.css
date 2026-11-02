@@ -3612,6 +3612,291 @@ figcaption {
   }
 }
 
+/* ========================================================
+   THEME TOGGLE BUTTON STYLES (DAY / NIGHT)
+   ======================================================== */
+.theme-toggle-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  padding: 4px 6px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.theme-toggle-btn:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: var(--gold);
+  transform: translateY(-1px);
+}
+
+.theme-toggle-track {
+  width: 44px;
+  height: 24px;
+  background: rgba(16, 30, 34, 0.6);
+  border-radius: 999px;
+  position: relative;
+  transition: background-color 0.25s ease;
+  padding: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.theme-dark .theme-toggle-track {
+  background: #1e3a40;
+}
+
+.theme-toggle-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), background-color 0.25s ease;
+  transform: translateX(0);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.theme-dark .theme-toggle-thumb {
+  transform: translateX(20px);
+  background: #38bdf8;
+}
+
+.theme-icon {
+  transition: all 0.2s ease;
+}
+
+.sun-icon {
+  color: #1a292b;
+}
+
+.moon-icon {
+  color: #0c1517;
+}
+
+.theme-toggle-text {
+  font-size: 12px;
+  font-weight: 700;
+  color: rgba(255, 255, 255, 0.9);
+  padding-right: 6px;
+}
+
+/* ========================================================
+   DARK / NIGHT MODE OVERRIDES
+   ======================================================== */
+html.dark,
+[data-theme="dark"],
+html.dark body {
+  --cream: #0c1517;
+  --sky: #101c1f;
+  --deep-oil: #f8fafc;
+  --oil: #f1f5f9;
+  --muted: #94a3b8;
+  color: #e2e8f0;
+  background-color: #0c1517;
+}
+
+html.dark .section-title {
+  color: #f8fafc;
+}
+
+html.dark .section-intro {
+  color: #94a3b8;
+}
+
+html.dark .section-label {
+  color: var(--gold);
+}
+
+html.dark .section-label-rule {
+  background: rgba(232, 174, 88, 0.35);
+}
+
+html.dark .history-section {
+  background: #0c1517;
+}
+
+html.dark .places-section {
+  background: #101c1f;
+}
+
+html.dark .family-section {
+  background: #0c1517;
+}
+
+html.dark .social-section {
+  background: #101c1f;
+}
+
+html.dark .wiki-section {
+  background: #0e1719;
+}
+
+html.dark .settlements-section {
+  background: #0c1517;
+}
+
+html.dark .hub-portal-section {
+  background: #0e181b;
+}
+
+html.dark .place-row {
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+html.dark .place-row strong {
+  color: #f8fafc;
+}
+
+html.dark .place-row span {
+  color: #94a3b8;
+}
+
+html.dark .place-row:hover {
+  background: rgba(232, 174, 88, 0.08);
+}
+
+html.dark .routes {
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+html.dark .routes-col strong {
+  color: #f8fafc;
+}
+
+html.dark .routes-col span {
+  color: #94a3b8;
+}
+
+html.dark .history-quote {
+  color: #cbd5e1;
+}
+
+html.dark .history-stat strong {
+  color: #f8fafc;
+}
+
+html.dark .archive-photo-figure figcaption strong,
+html.dark .kazakhstan-map-figure figcaption strong {
+  color: #f8fafc;
+}
+
+/* Cards & Components in Dark Mode */
+html.dark .wiki-stat-card,
+html.dark .wiki-fact-card,
+html.dark .settlement-card,
+html.dark .camp-card,
+html.dark .tender-card,
+html.dark .tender-overview-box,
+html.dark .civil-card,
+html.dark .service-card,
+html.dark .social-card {
+  background: #142226;
+  border-color: #24383c;
+  color: #e2e8f0;
+}
+
+html.dark .wiki-stat-card strong,
+html.dark .wiki-fact-card h3,
+html.dark .settlement-card h4,
+html.dark .camp-info h4,
+html.dark .tender-card h4,
+html.dark .civil-card h4,
+html.dark .service-card h4,
+html.dark .social-card h4 {
+  color: #f8fafc;
+}
+
+html.dark .settlement-tab {
+  background: #18292d;
+  border-color: #24383c;
+  color: #cbd5e1;
+}
+
+html.dark .settlement-tab.active {
+  background: var(--gold);
+  color: #0c1517;
+  border-color: var(--gold);
+}
+
+html.dark .settlement-search input {
+  background: #142226;
+  border-color: #24383c;
+  color: #ffffff;
+}
+
+html.dark .settlement-search input::placeholder {
+  color: #64748b;
+}
+
+html.dark .hub-master-tab {
+  background: #142226;
+  border-color: #24383c;
+}
+
+html.dark .hub-master-tab strong {
+  color: #f8fafc;
+}
+
+html.dark .hub-master-tab small {
+  color: #94a3b8;
+}
+
+html.dark .hub-master-tab.active {
+  background: #192d32;
+  border-color: var(--gold);
+}
+
+html.dark .hub-sub-title {
+  color: #f8fafc;
+}
+
+html.dark .school-card h4 {
+  color: #f8fafc !important;
+}
+
+html.dark .kg-card h4 {
+  color: #f8fafc !important;
+}
+
+html.dark .school-phone {
+  color: #cbd5e1;
+}
+
+html.dark .tender-details-grid {
+  background: #0f1c1f;
+  border-color: #24383c;
+}
+
+html.dark .tender-detail-item span {
+  color: #94a3b8;
+}
+
+html.dark .tender-detail-item strong {
+  color: #f8fafc;
+}
+
+html.dark .district-summary-bar {
+  background: #142226;
+  border-color: #24383c;
+}
+
+html.dark .district-stat strong {
+  color: #f8fafc;
+}
+
+html.dark .site-footer {
+  background: #080f11;
+  border-top: 1px solid #1a2c30;
+}
+
+
 
 
 

@@ -25,6 +25,7 @@ import { WikipediaFacts } from "./components/WikipediaFacts";
 import { DistrictSettlements } from "./components/DistrictSettlements";
 import { CityHubPortal } from "./components/CityHubPortal";
 import { LanguageProvider, useLanguage, LanguageSwitcher } from "./components/LanguageContext";
+import { ThemeProvider, ThemeToggle } from "./components/ThemeContext";
 import { Language } from "./i18n/translations";
 
 const cityQuery = "Құлсары, Атырау облысы, Қазақстан";
@@ -353,6 +354,9 @@ function AppMain() {
             {/* 3-Language Switcher (KZ / RU / EN) */}
             <LanguageSwitcher />
 
+            {/* Night / Day Mode Toggle */}
+            <ThemeToggle />
+
             <a className="header-map" href={mapSearch(cityQuery)} target="_blank" rel="noopener noreferrer">
               <MapPin size={16} strokeWidth={1.8} aria-hidden="true" />
               <span>{t.nav.map}</span>
@@ -383,9 +387,12 @@ function AppMain() {
             </button>
           </div>
 
-          <div style={{ padding: "8px 24px 12px", display: "flex", justifyContent: "space-between", alignItems: "center" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>ТІЛ / ЯЗЫК:</span>
-            <LanguageSwitcher />
+          <div style={{ padding: "8px 24px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
+            <span style={{ fontSize: "12px", fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>БАПТАУЛАР:</span>
+            <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+              <LanguageSwitcher />
+              <ThemeToggle />
+            </div>
           </div>
 
           {weather && (
@@ -764,8 +771,10 @@ function AppMain() {
 
 export default function App() {
   return (
-    <LanguageProvider>
-      <AppMain />
-    </LanguageProvider>
+    <ThemeProvider>
+      <LanguageProvider>
+        <AppMain />
+      </LanguageProvider>
+    </ThemeProvider>
   );
 }

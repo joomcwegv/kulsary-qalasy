@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80">
+  <rect width="200" height="80" fill="#003087"/>
+  <rect x="8" y="8" width="184" height="64" rx="4" fill="none" stroke="#0066cc" stroke-width="1.5"/>
+  <!-- TCO Letters -->
+  <text x="100" y="36" font-family="Arial,sans-serif" font-size="28" font-weight="900" fill="#ffffff" text-anchor="middle" letter-spacing="6">TCO</text>
+  <text x="100" y="56" font-family="Arial,sans-serif" font-size="9" font-weight="600" fill="#5ab4ff" text-anchor="middle" letter-spacing="1">TENGIZCHEVROIL</text>
+  <!-- Chevron flame symbol -->
+  <path d="M88 17 L100 7 L112 17 L106 17 L100 10 L94 17Z" fill="#e8b94a"/>
+</svg>

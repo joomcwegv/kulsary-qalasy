@@ -35,6 +35,9 @@ interface OilOperator {
   workforce: string;
   careerLink: string;
   fields: string[];
+  logo: string;
+  bgImage: string;
+  accentColor: string;
 }
 
 interface CampLocation {
@@ -66,6 +69,9 @@ interface SchoolItem {
   phone: string;
   link: string;
   founded: string;
+  logo?: string;
+  color?: string;
+  image: string;
 }
 
 interface KindergartenItem {
@@ -73,6 +79,9 @@ interface KindergartenItem {
   address: { kz: string; ru: string; en: string };
   capacity: string;
   queueLink: string;
+  logo?: string;
+  color?: string;
+  image: string;
 }
 
 // --- 1. Oil & Gas Hub Data ---
@@ -98,6 +107,9 @@ const oilOperators: OilOperator[] = [
     workforce: "40 000+ маман",
     careerLink: "https://tengizchevroil.com/careers",
     fields: ["Теңіз кені", "Королев кені", "ТШО Зауыты"],
+    logo: "/images/logo-tco.svg",
+    bgImage: "/images/bg-tco.jpg",
+    accentColor: "#0ea5e9",
   },
   {
     id: "embamunaygas",
@@ -120,6 +132,9 @@ const oilOperators: OilOperator[] = [
     workforce: "5 000+ қызметкер",
     careerLink: "https://emba.kmg.kz/kaz/career/",
     fields: ["Құлсары кені", "Қосшағыл", "Айранкөл", "Прорва"],
+    logo: "/images/logo-emba.svg",
+    bgImage: "/images/bg-emba.jpg",
+    accentColor: "#ef4444",
   },
   {
     id: "senimdi",
@@ -142,6 +157,9 @@ const oilOperators: OilOperator[] = [
     workforce: "12 000+ маман",
     careerLink: "https://senimdi.kz/careers/",
     fields: ["ТШО Зауыты", "3-ші Буын Зауыты (3БЗ)", "Вахталық қалашықтар"],
+    logo: "/images/logo-senimdi.svg",
+    bgImage: "/images/bg-senimdi.jpg",
+    accentColor: "#f59e0b",
   },
   {
     id: "gate-inshaat",
@@ -164,6 +182,9 @@ const oilOperators: OilOperator[] = [
     workforce: "6 000+ маман",
     careerLink: "https://denholm-zholdas.kz/vacancies",
     fields: ["Теңіз кешені", "Құлсары базалары"],
+    logo: "/images/logo-gate.svg",
+    bgImage: "/images/bg-gate.jpg",
+    accentColor: "#06b6d4",
   },
 ];
 
@@ -281,6 +302,8 @@ const schoolsList: SchoolItem[] = [
     phone: "+7 (71237) 5-11-20",
     link: "https://kundelik.kz/",
     founded: "1985 ж.",
+    color: "#1d4ed8",
+    image: "/images/school-01.jpg",
   },
   {
     id: "sch-05",
@@ -290,6 +313,8 @@ const schoolsList: SchoolItem[] = [
     phone: "+7 (71237) 5-22-14",
     link: "https://kundelik.kz/",
     founded: "1939 ж.",
+    color: "#15803d",
+    image: "/images/school-05.jpg",
   },
   {
     id: "sch-daryn",
@@ -299,6 +324,8 @@ const schoolsList: SchoolItem[] = [
     phone: "+7 (71237) 6-04-18",
     link: "https://kundelik.kz/",
     founded: "2015 ж.",
+    color: "#7c3aed",
+    image: "/images/school-daryn.jpg",
   },
   {
     id: "sch-college",
@@ -308,6 +335,8 @@ const schoolsList: SchoolItem[] = [
     phone: "+7 (71237) 5-30-45",
     link: "https://zhmgk.kz/",
     founded: "1972 ж.",
+    color: "#b45309",
+    image: "/images/school-college.jpg",
   },
   {
     id: "sch-music",
@@ -317,6 +346,8 @@ const schoolsList: SchoolItem[] = [
     phone: "+7 (71237) 5-18-90",
     link: "https://kundelik.kz/",
     founded: "1966 ж.",
+    color: "#be185d",
+    image: "/images/school-music.jpg",
   },
   {
     id: "sch-16",
@@ -326,6 +357,8 @@ const schoolsList: SchoolItem[] = [
     phone: "+7 (71237) 5-41-10",
     link: "https://kundelik.kz/",
     founded: "1988 ж.",
+    color: "#0e7490",
+    image: "/images/school-16.jpg",
   },
 ];
 
@@ -335,24 +368,32 @@ const kindergartens: KindergartenItem[] = [
     address: { kz: "Құлсары қ., 2-ықшамаудан", ru: "г. Кульсары, 2-й микрорайон", en: "Kulsary, 2nd microdistrict" },
     capacity: "280 орын",
     queueLink: "https://indigo24.kz/",
+    color: "#d97706",
+    image: "/images/kg-aigolek.jpg",
   },
   {
     name: { kz: "«Айналайын» мемлекеттік балабақшасы", ru: "Государственный ясли-сад «Айналайын»", en: "Aynalayin State Kindergarten" },
     address: { kz: "Құлсары қ., Орталық", ru: "г. Кульсары, Центр", en: "Kulsary, Center" },
     capacity: "320 орын",
     queueLink: "https://indigo24.kz/",
+    color: "#16a34a",
+    image: "/images/kg-aynalayin.jpg",
   },
   {
     name: { kz: "«Гүлдәурен» бөбекжайы", ru: "Ясли-сад «Гулдаурен»", en: "Guldawren Kindergarten" },
     address: { kz: "Құлсары қ., Мұнайшылар", ru: "г. Кульсары, район Мунайшылар", en: "Kulsary, Munayshylar" },
     capacity: "250 орын",
     queueLink: "https://indigo24.kz/",
+    color: "#b45309",
+    image: "/images/kg-guldawren.jpg",
   },
   {
     name: { kz: "«Балапан» бөбекжай-бақшасы", ru: "Ясли-сад «Балапан»", en: "Balapan Kindergarten" },
     address: { kz: "Құлсары қ., 1-ауыл", ru: "г. Кульсары, 1-й аул", en: "Kulsary, 1st aui" },
     capacity: "200 орын",
     queueLink: "https://indigo24.kz/",
+    color: "#be185d",
+    image: "/images/kg-balapan.jpg",
   },
 ];
 
@@ -488,29 +529,66 @@ export function CityHubPortal() {
             </h3>
             <div className="operators-grid">
               {oilOperators.map((op) => (
-                <div className="operator-card" key={op.id}>
-                  <div className="operator-card-top">
-                    <span className="operator-badge">{op.badge[lang]}</span>
-                    <span className="operator-workforce">{op.workforce}</span>
-                  </div>
-                  <h4>{op.name}</h4>
-                  <p className="operator-role">{op.role[lang]}</p>
-                  <p className="operator-desc">{op.desc[lang]}</p>
+                <div className="operator-card" key={op.id} style={{
+                  backgroundImage: `url(${op.bgImage})`,
+                  backgroundSize: 'cover',
+                  backgroundPosition: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                }}>
+                  {/* Dark overlay */}
+                  <div style={{
+                    position: 'absolute', inset: 0,
+                    background: 'linear-gradient(135deg, rgba(5,10,20,0.93) 0%, rgba(5,10,20,0.80) 60%, rgba(5,10,20,0.70) 100%)',
+                    zIndex: 0,
+                  }} />
+                  {/* Accent border top */}
+                  <div style={{
+                    position: 'absolute', top: 0, left: 0, right: 0, height: '3px',
+                    background: op.accentColor, zIndex: 2,
+                  }} />
 
-                  <div className="operator-fields">
-                    {op.fields.map((f, i) => (
-                      <span className="operator-field-pill" key={i}>
-                        <CheckCircle2 size={12} /> {f}
-                      </span>
-                    ))}
-                  </div>
+                  <div style={{ position: 'relative', zIndex: 1, display: 'flex', flexDirection: 'column', height: '100%' }}>
+                    {/* Logo + badge row */}
+                    <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', marginBottom: '16px' }}>
+                      <img
+                        src={op.logo}
+                        alt={op.name + " logo"}
+                        style={{ height: '52px', width: 'auto', borderRadius: '6px', background: 'rgba(255,255,255,0.08)', padding: '4px 8px', objectFit: 'contain' }}
+                      />
+                      <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'flex-end', gap: '4px' }}>
+                        <span className="operator-badge" style={{ background: `${op.accentColor}25`, color: op.accentColor, border: `1px solid ${op.accentColor}50` }}>
+                          {op.badge[lang]}
+                        </span>
+                        <span style={{ fontSize: '11px', fontWeight: 700, color: 'rgba(255,255,255,0.55)' }}>{op.workforce}</span>
+                      </div>
+                    </div>
 
-                  <div className="operator-action">
-                    <a href={op.careerLink} target="_blank" rel="noopener noreferrer" className="op-career-btn">
-                      <Briefcase size={15} />
-                      <span>{lang === "kz" ? "Бос орындар / Резюме жіберу" : lang === "ru" ? "Вакансии / Отправить резюме" : "View Vacancies & Apply"}</span>
-                      <ArrowUpRight size={15} />
-                    </a>
+                    <h4 style={{ color: '#ffffff', fontSize: '20px', fontWeight: 800, margin: '0 0 6px' }}>{op.name}</h4>
+                    <p className="operator-role" style={{ color: op.accentColor }}>{op.role[lang]}</p>
+                    <p className="operator-desc" style={{ color: 'rgba(255,255,255,0.72)', flex: 1 }}>{op.desc[lang]}</p>
+
+                    <div className="operator-fields" style={{ marginBottom: '18px' }}>
+                      {op.fields.map((f, i) => (
+                        <span className="operator-field-pill" key={i} style={{
+                          background: `${op.accentColor}18`,
+                          border: `1px solid ${op.accentColor}40`,
+                          color: 'rgba(255,255,255,0.85)',
+                        }}>
+                          <CheckCircle2 size={12} style={{ color: op.accentColor }} /> {f}
+                        </span>
+                      ))}
+                    </div>
+
+                    <div className="operator-action">
+                      <a href={op.careerLink} target="_blank" rel="noopener noreferrer" className="op-career-btn" style={{
+                        background: op.accentColor, color: '#0a1020',
+                      }}>
+                        <Briefcase size={15} />
+                        <span>{lang === "kz" ? "Бос орындар / Резюме жіберу" : lang === "ru" ? "Вакансии / Отправить резюме" : "View Vacancies & Apply"}</span>
+                        <ArrowUpRight size={15} />
+                      </a>
+                    </div>
                   </div>
                 </div>
               ))}
@@ -670,27 +748,107 @@ export function CityHubPortal() {
             </h3>
 
             <div className="schools-grid">
-              {schoolsList.map((sch) => (
-                <div className="school-card" key={sch.id}>
-                  <div className="school-card-top">
-                    <span className="school-founded">{sch.founded}</span>
-                    <span className="school-type">{sch.type[lang]}</span>
+              {schoolsList.map((sch) => {
+                const accent = sch.color || "#1d4ed8";
+                return (
+                  <div className="school-card" key={sch.id} style={{ padding: 0, overflow: 'hidden', border: `1.5px solid ${accent}35` }}>
+                    {/* Real Institution Photo Header */}
+                    <div style={{
+                      position: 'relative',
+                      height: '140px',
+                      overflow: 'hidden',
+                      backgroundImage: `url(${sch.image})`,
+                      backgroundSize: 'cover',
+                      backgroundPosition: 'center',
+                    }}>
+                      <div style={{
+                        position: 'absolute',
+                        inset: 0,
+                        background: 'linear-gradient(to top, rgba(16,30,34,0.92) 0%, rgba(16,30,34,0.4) 60%, rgba(16,30,34,0.2) 100%)',
+                      }} />
+                      {/* Top badges */}
+                      <div style={{ position: 'relative', zIndex: 1, padding: '12px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                        <span style={{
+                          background: 'rgba(255,255,255,0.92)',
+                          color: '#101e22',
+                          fontWeight: 800,
+                          fontSize: '11px',
+                          padding: '3px 9px',
+                          borderRadius: '4px',
+                          boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                        }}>
+                          {sch.founded}
+                        </span>
+                        <span style={{
+                          background: accent,
+                          color: '#ffffff',
+                          fontWeight: 800,
+                          fontSize: '10px',
+                          letterSpacing: '0.05em',
+                          padding: '3px 8px',
+                          borderRadius: '4px',
+                          boxShadow: '0 2px 6px rgba(0,0,0,0.2)',
+                        }}>
+                          {sch.type[lang]}
+                        </span>
+                      </div>
+                      {/* Emblem / Type Icon */}
+                      <div style={{
+                        position: 'absolute',
+                        bottom: '10px',
+                        left: '14px',
+                        zIndex: 1,
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '8px',
+                      }}>
+                        <div style={{
+                          width: '36px',
+                          height: '36px',
+                          borderRadius: '8px',
+                          background: 'rgba(255,255,255,0.2)',
+                          backdropFilter: 'blur(6px)',
+                          border: '1.5px solid rgba(255,255,255,0.6)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: '#ffffff',
+                        }}>
+                          {sch.id === "sch-college" ? (
+                            <GraduationCap size={20} />
+                          ) : sch.id === "sch-music" ? (
+                            <span style={{ fontSize: '18px' }}>🎵</span>
+                          ) : (
+                            <School size={20} />
+                          )}
+                        </div>
+                        <span style={{ color: '#ffffff', fontSize: '11px', fontWeight: 700, textShadow: '0 1px 3px rgba(0,0,0,0.8)' }}>
+                          {sch.id === "sch-college" ? "ТШО Базасы" : sch.id === "sch-daryn" ? "Лицей-интернат" : "Мектеп"}
+                        </span>
+                      </div>
+                    </div>
+
+                    {/* Card body */}
+                    <div style={{ padding: '16px 18px 14px', background: 'var(--card-bg, #ffffff)' }}>
+                      <h4 style={{ fontSize: '15px', lineHeight: 1.35, marginBottom: '8px', color: 'var(--deep-oil)', fontWeight: 800, minHeight: '40px' }}>
+                        {sch.name[lang]}
+                      </h4>
+                      <p className="school-addr" style={{ margin: '0 0 12px', fontSize: '12px' }}>
+                        <MapPin size={14} style={{ color: accent, flexShrink: 0 }} /> {sch.address[lang]}
+                      </p>
+                      <div className="school-actions" style={{ paddingTop: '10px' }}>
+                        <a href={`tel:${sch.phone}`} className="school-phone">
+                          <PhoneCall size={13} /> {sch.phone}
+                        </a>
+                        <a href={sch.link} target="_blank" rel="noopener noreferrer" className="school-link" style={{ color: accent, fontWeight: 700 }}>
+                          <span>{sch.id === "sch-college" ? "Сайт" : "Kundelik"}</span>
+                          <ArrowUpRight size={13} />
+                        </a>
+                      </div>
+                    </div>
                   </div>
-                  <h4>{sch.name[lang]}</h4>
-                  <p className="school-addr">
-                    <MapPin size={14} /> {sch.address[lang]}
-                  </p>
-                  <div className="school-actions">
-                    <a href={`tel:${sch.phone}`} className="school-phone">
-                      <PhoneCall size={14} /> {sch.phone}
-                    </a>
-                    <a href={sch.link} target="_blank" rel="noopener noreferrer" className="school-link">
-                      <span>Kundelik / Сайт</span>
-                      <ArrowUpRight size={13} />
-                    </a>
-                  </div>
-                </div>
-              ))}
+                );
+              })}
             </div>
 
             {/* Kindergartens List */}
@@ -698,21 +856,73 @@ export function CityHubPortal() {
               {lang === "kz" ? "Балабақшалар тізімі және кезекке тұру" : lang === "ru" ? "Реестр детских садов и электронная очередь" : "Kindergartens & Electronic Queue Enrollment"}
             </h3>
 
-            <div className="kindergartens-grid">
+            <div className="kindergartens-grid" style={{ gridTemplateColumns: 'repeat(2, minmax(0, 1fr))', gap: '20px' }}>
               {kindergartens.map((kg, i) => (
-                <div className="kg-card" key={i}>
-                  <div className="kg-icon">
-                    <Baby size={20} />
+                <div className="kg-card" key={i} style={{ padding: 0, overflow: 'hidden', display: 'flex', flexDirection: 'column', border: `1.5px solid ${kg.color}35` }}>
+                  {/* Kindergarten Photo Banner */}
+                  <div style={{
+                    position: 'relative',
+                    height: '130px',
+                    backgroundImage: `url(${kg.image})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center',
+                  }}>
+                    <div style={{
+                      position: 'absolute',
+                      inset: 0,
+                      background: 'linear-gradient(to top, rgba(16,30,34,0.92) 0%, rgba(16,30,34,0.3) 60%, rgba(16,30,34,0.1) 100%)',
+                    }} />
+                    <div style={{ position: 'relative', zIndex: 1, padding: '10px 14px', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                      <span style={{
+                        background: 'rgba(255,255,255,0.92)',
+                        color: '#101e22',
+                        fontWeight: 800,
+                        fontSize: '11px',
+                        padding: '3px 9px',
+                        borderRadius: '4px',
+                      }}>
+                        {kg.capacity}
+                      </span>
+                      <span style={{
+                        background: kg.color,
+                        color: '#ffffff',
+                        fontWeight: 800,
+                        fontSize: '10px',
+                        padding: '3px 8px',
+                        borderRadius: '4px',
+                      }}>
+                        Indigo24 жүйесінде
+                      </span>
+                    </div>
+                    <div style={{ position: 'absolute', bottom: '8px', left: '14px', zIndex: 1, display: 'flex', alignItems: 'center', gap: '6px' }}>
+                      <Baby size={18} color="#ffffff" />
+                      <span style={{ color: '#ffffff', fontSize: '11px', fontWeight: 700 }}>Бөбекжай-бақшасы</span>
+                    </div>
                   </div>
-                  <div className="kg-body">
-                    <h4>{kg.name[lang]}</h4>
-                    <p className="kg-addr"><MapPin size={13} /> {kg.address[lang]}</p>
-                    <span className="kg-cap">{kg.capacity}</span>
+
+                  {/* Body & Actions */}
+                  <div style={{ padding: '16px 18px', display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '14px', flex: 1, background: 'var(--card-bg, #ffffff)' }}>
+                    <div>
+                      <h4 style={{ fontSize: '15px', fontWeight: 800, margin: '0 0 4px', color: 'var(--deep-oil)' }}>{kg.name[lang]}</h4>
+                      <p style={{ margin: 0, fontSize: '12px', color: 'var(--muted)', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                        <MapPin size={13} style={{ color: kg.color }} /> {kg.address[lang]}
+                      </p>
+                    </div>
+                    <a href={kg.queueLink} target="_blank" rel="noopener noreferrer" className="kg-queue-btn" style={{
+                      background: kg.color,
+                      color: '#ffffff',
+                      borderRadius: '6px',
+                      padding: '8px 14px',
+                      fontWeight: 700,
+                      display: 'inline-flex',
+                      alignItems: 'center',
+                      gap: '5px',
+                      whiteSpace: 'nowrap',
+                    }}>
+                      <span>{lang === "kz" ? "Indigo кезек" : lang === "ru" ? "Очередь Indigo" : "Queue Portal"}</span>
+                      <ArrowUpRight size={14} />
+                    </a>
                   </div>
-                  <a href={kg.queueLink} target="_blank" rel="noopener noreferrer" className="kg-queue-btn">
-                    <span>{lang === "kz" ? "Indigo кезек" : lang === "ru" ? "Очередь Indigo" : "Queue Portal"}</span>
-                    <ArrowUpRight size={14} />
-                  </a>
                 </div>
               ))}
             </div>
