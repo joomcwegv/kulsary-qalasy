@@ -746,8 +746,38 @@ function AppMain() {
                 </a>
               </div>
             </div>
-            <div className="youth-image" data-reveal>
-              <img src="/images/youth-life.jpg" alt="Жастар алаңы" />
+            <div className="youth-image" data-reveal style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: "12px", minHeight: "822px", padding: "24px 24px 24px 0" }}>
+              <div style={{ position: "relative", overflow: "hidden", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.15)", background: "#101e22" }}>
+                <img
+                  src="/images/bg-gate.jpg"
+                  alt="Құлсары қаласының салтанатты Аркасы"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+                />
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 18px", background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)", color: "#fff" }}>
+                  <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--gold)", letterSpacing: "0.06em", display: "block", textTransform: "uppercase" }}>
+                    {lang === "kz" ? "ҚАЛАҒА КІРЕБЕРІС" : lang === "ru" ? "ВЪЕЗД В ГОРОД" : "CITY ENTRANCE"}
+                  </span>
+                  <strong style={{ fontSize: "14px", fontWeight: 700 }}>
+                    {lang === "kz" ? "🏛️ Құлсарының салтанатты Аркасы" : lang === "ru" ? "🏛️ Торжественная Арка города Кульсары" : "🏛️ Ceremonial Entrance Arch of Kulsary"}
+                  </strong>
+                </div>
+              </div>
+
+              <div style={{ position: "relative", overflow: "hidden", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.15)", background: "#101e22" }}>
+                <img
+                  src="/images/traffic-flow.jpg"
+                  alt="Құлсары қаласының орталық көшесі және қозғалысы"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+                />
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 18px", background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)", color: "#fff" }}>
+                  <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--gold)", letterSpacing: "0.06em", display: "block", textTransform: "uppercase" }}>
+                    {lang === "kz" ? "ОРТАЛЫҚ ҚОЗҒАЛЫС" : lang === "ru" ? "ЦЕНТРАЛЬНЫЙ ПРОСПЕКТ" : "CENTRAL AVENUE"}
+                  </span>
+                  <strong style={{ fontSize: "14px", fontWeight: 700 }}>
+                    {lang === "kz" ? "🚗 Орталық қалалық даңғыл & көлік қозғалысы" : lang === "ru" ? "🚗 Городской проспект и ритм движения" : "🚗 Central Avenue & City Traffic"}
+                  </strong>
+                </div>
+              </div>
             </div>
           </div>
         </section>
