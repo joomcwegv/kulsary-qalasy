@@ -26,6 +26,7 @@ import { CityHubPortal } from "./components/CityHubPortal";
 import { LanguageProvider, useLanguage, LanguageSwitcher } from "./components/LanguageContext";
 import { ThemeProvider, ThemeToggle } from "./components/ThemeContext";
 import { ViewCounter } from "./components/ViewCounter";
+import { CommunitySocialFeed } from "./components/CommunitySocialFeed";
 import { Language } from "./i18n/translations";
 
 const cityQuery = "Құлсары, Атырау облысы, Қазақстан";
@@ -891,8 +892,13 @@ function AppMain() {
             </div>
           </div>
 
+          {/* Живой қауымдастық желісі — Community Social Feed (Jiger Sport стилінде) */}
+          <div className="page-container" data-reveal>
+            <CommunitySocialFeed />
+          </div>
+
           {/* Bluesky Profile Card — @jylyoi.bsky.social */}
-          <div className="page-container" style={{ marginTop: "36px" }} data-reveal>
+          <div className="page-container" style={{ marginTop: "24px" }} data-reveal>
             <a
               href="https://bsky.app/profile/jylyoi.bsky.social"
               target="_blank"
