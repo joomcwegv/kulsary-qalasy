@@ -371,6 +371,14 @@ function AppMain() {
       color: "#229ED9",
     },
     {
+      icon: Send,
+      platform: "TELEGRAM / ЖАНАШ АРНА",
+      title: lang === "kz" ? "Жанаш — Telegram арнасы" : lang === "ru" ? "Telegram-канал Жанаш" : "Zhanash Telegram Channel",
+      detail: "@Zhanash2025 · t.me/Zhanash2025",
+      href: "https://t.me/Zhanash2025",
+      color: "#229ED9",
+    },
+    {
       icon: VkIcon,
       platform: "VKONTAKTE (VK) / 1-КЕЗЕК",
       title: lang === "kz" ? "«Подслушано Құлсары» / Хабарландырулар" : lang === "ru" ? "«Подслушано Кульсары» / Доска объявлений" : "Overheard in Kulsary (VK)",
