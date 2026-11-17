@@ -338,6 +338,14 @@ function AppMain() {
       color: "#1877F2",
     },
     {
+      icon: FacebookIcon,
+      platform: "FACEBOOK / ҚАУЫМДАСТЫҚ ТОБЫ",
+      title: lang === "kz" ? "«Жылыой» Facebook қауымдастық тобы" : lang === "ru" ? "Группа сообщества «Жылыой» (Facebook)" : "«Zhylyoi» Facebook Community Group",
+      detail: "facebook.com/groups · Тұрғындар мен қауымдастық тобы",
+      href: "https://www.facebook.com/share/g/19xKN3E6GW/",
+      color: "#1877F2",
+    },
+    {
       icon: InstagramIcon,
       platform: "INSTAGRAM / ҮЕҰ РЕСМИ",
       title: lang === "kz" ? "«Жылыой Тынысы» Instagram" : lang === "ru" ? "Instagram «Жылыой Тынысы»" : "«Zhylyoi Tynysy» Instagram",
@@ -351,6 +359,22 @@ function AppMain() {
       title: lang === "kz" ? "«Жылыой Тынысы» WhatsApp" : lang === "ru" ? "WhatsApp «Жылыой Тынысы»" : "«Zhylyoi Tynysy» WhatsApp",
       detail: "+7 708 258 80 93 · Тікелей хабарласыңыз",
       href: "https://wa.me/77082588093",
+      color: "#25D366",
+    },
+    {
+      icon: WhatsAppIcon,
+      platform: "WHATSAPP / ТҰРҒЫНДАР ЧАТЫ (1-ТОП)",
+      title: lang === "kz" ? "«Жылыой Тынысы» WhatsApp тобы №1" : lang === "ru" ? "Группа WhatsApp «Жылыой Тынысы» №1" : "«Zhylyoi Tynysy» WhatsApp Group #1",
+      detail: "chat.whatsapp.com · Тұрғындардың ашық чат тобы",
+      href: "https://chat.whatsapp.com/HRh98ntJdRx2ELdBhQv71W?s=sh&p=a&iam=2",
+      color: "#25D366",
+    },
+    {
+      icon: WhatsAppIcon,
+      platform: "WHATSAPP / ТАЛҚЫЛАУ ТОБЫ (2-ТОП)",
+      title: lang === "kz" ? "«Жылыой Тынысы» WhatsApp тобы №2" : lang === "ru" ? "Группа WhatsApp «Жылыой Тынысы» №2" : "«Zhylyoi Tynysy» WhatsApp Group #2",
+      detail: "chat.whatsapp.com · Қалалық хабарламалар мен талқылаулар",
+      href: "https://chat.whatsapp.com/IwJ6832dMSo9OjuKUefhog?s=sh&p=a&iam=2",
       color: "#25D366",
     },
     {
