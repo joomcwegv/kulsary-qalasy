@@ -25,6 +25,7 @@ import { DistrictSettlements } from "./components/DistrictSettlements";
 import { CityHubPortal } from "./components/CityHubPortal";
 import { LanguageProvider, useLanguage, LanguageSwitcher } from "./components/LanguageContext";
 import { ThemeProvider, ThemeToggle } from "./components/ThemeContext";
+import { ViewCounter } from "./components/ViewCounter";
 import { Language } from "./i18n/translations";
 
 const cityQuery = "Құлсары, Атырау облысы, Қазақстан";
@@ -475,9 +476,12 @@ function AppMain() {
             ))}
           </nav>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "8px", flexShrink: 0 }}>
             {/* Sticky live weather pill: Always pinned at the top! */}
             <HeaderWeather weather={weather} loading={loading} isScrolled={isScrolled} />
+
+            {/* Live views / eye counter */}
+            <ViewCounter />
 
             {/* 3-Language Switcher (KZ / RU / EN) */}
             <LanguageSwitcher />
@@ -499,7 +503,7 @@ function AppMain() {
               aria-controls="mobile-navigation"
               onClick={() => setMenuOpen(true)}
             >
-              <Menu size={27} strokeWidth={1.6} aria-hidden="true" />
+              <Menu size={24} strokeWidth={1.8} aria-hidden="true" />
             </button>
           </div>
         </div>
@@ -516,7 +520,7 @@ function AppMain() {
           </div>
 
           <div style={{ padding: "8px 24px 12px", display: "flex", justifyContent: "space-between", alignItems: "center", gap: "10px" }}>
-            <span style={{ fontSize: "12px", fontWeight: 700, color: "rgba(255,255,255,0.7)" }}>БАПТАУЛАР:</span>
+            <ViewCounter />
             <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
               <LanguageSwitcher />
               <ThemeToggle />
@@ -746,35 +750,19 @@ function AppMain() {
                 </a>
               </div>
             </div>
-            <div className="youth-image" data-reveal style={{ display: "grid", gridTemplateRows: "1fr 1fr", gap: "12px", minHeight: "822px", padding: "24px 24px 24px 0" }}>
-              <div style={{ position: "relative", overflow: "hidden", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.15)", background: "#101e22" }}>
+            <div className="youth-image" data-reveal style={{ minHeight: "822px", padding: "24px 24px 24px 0" }}>
+              <div style={{ position: "relative", overflow: "hidden", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.15)", height: "100%", minHeight: "720px", background: "#101e22" }}>
                 <img
-                  src="/images/bg-gate.jpg"
-                  alt="Құлсары қаласының салтанатты Аркасы"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
+                  src="/images/qulsary-hero.jpg"
+                  alt="Құлсары қаласының көркем келбеті мен панорамасы"
+                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 55%" }}
                 />
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 18px", background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)", color: "#fff" }}>
-                  <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--gold)", letterSpacing: "0.06em", display: "block", textTransform: "uppercase" }}>
-                    {lang === "kz" ? "ҚАЛАҒА КІРЕБЕРІС" : lang === "ru" ? "ВЪЕЗД В ГОРОД" : "CITY ENTRANCE"}
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "24px 28px", background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)", color: "#fff" }}>
+                  <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--gold)", letterSpacing: "0.08em", display: "block", textTransform: "uppercase" }}>
+                    {lang === "kz" ? "ҚАЛА ТЫНЫСЫ" : lang === "ru" ? "ПАНОРАМА ГОРОДА" : "CITY LIFE"}
                   </span>
-                  <strong style={{ fontSize: "14px", fontWeight: 700 }}>
-                    {lang === "kz" ? "🏛️ Құлсарының салтанатты Аркасы" : lang === "ru" ? "🏛️ Торжественная Арка города Кульсары" : "🏛️ Ceremonial Entrance Arch of Kulsary"}
-                  </strong>
-                </div>
-              </div>
-
-              <div style={{ position: "relative", overflow: "hidden", borderRadius: "14px", border: "1px solid rgba(255,255,255,0.15)", background: "#101e22" }}>
-                <img
-                  src="/images/traffic-flow.jpg"
-                  alt="Құлсары қаласының орталық көшесі және қозғалысы"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center" }}
-                />
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "14px 18px", background: "linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 60%, transparent 100%)", color: "#fff" }}>
-                  <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--gold)", letterSpacing: "0.06em", display: "block", textTransform: "uppercase" }}>
-                    {lang === "kz" ? "ОРТАЛЫҚ ҚОЗҒАЛЫС" : lang === "ru" ? "ЦЕНТРАЛЬНЫЙ ПРОСПЕКТ" : "CENTRAL AVENUE"}
-                  </span>
-                  <strong style={{ fontSize: "14px", fontWeight: 700 }}>
-                    {lang === "kz" ? "🚗 Орталық қалалық даңғыл & көлік қозғалысы" : lang === "ru" ? "🚗 Городской проспект и ритм движения" : "🚗 Central Avenue & City Traffic"}
+                  <strong style={{ fontSize: "16px", fontWeight: 700 }}>
+                    {lang === "kz" ? "✨ Құлсары қаласының көркем келбеті мен заманауи дамуы" : lang === "ru" ? "✨ Живописный облик и современное развитие города Кульсары" : "✨ Beautiful Skyline & Modern Growth of Kulsary"}
                   </strong>
                 </div>
               </div>

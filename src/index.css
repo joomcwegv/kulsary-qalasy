@@ -251,16 +251,16 @@ footer {
 }
 
 .hero-image {
-  background-image: url("/images/traffic-flow.jpg");
-  background-position: center 60%;
+  background-image: url("/images/bg-gate.jpg");
+  background-position: center 48%;
   background-size: cover;
 }
 
 .hero-shade {
   background:
-    linear-gradient(90deg, rgba(9, 23, 27, 0.79) 0%, rgba(12, 25, 28, 0.57) 41%, rgba(12, 25, 28, 0.04) 85%),
-    linear-gradient(0deg, rgba(7, 19, 23, 0.58) 0%, transparent 53%),
-    linear-gradient(180deg, rgba(7, 19, 23, 0.4), transparent 27%);
+    linear-gradient(90deg, rgba(9, 23, 27, 0.88) 0%, rgba(12, 25, 28, 0.68) 45%, rgba(12, 25, 28, 0.3) 85%),
+    linear-gradient(0deg, rgba(7, 19, 23, 0.75) 0%, transparent 55%),
+    linear-gradient(180deg, rgba(7, 19, 23, 0.55), transparent 30%);
 }
 
 .hero-content {
@@ -1304,29 +1304,63 @@ figcaption {
   to { opacity: 1; transform: translateY(0); }
 }
 
-@media (max-width: 1280px) {
-  .site-header-inner { gap: 19px; }
-  .desktop-nav { gap: 16px; }
+.view-counter-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 5px 9px;
+  border-radius: 999px;
+  font-size: 11.5px;
+  font-weight: 700;
+  color: #fff;
+  white-space: nowrap;
+  backdrop-filter: blur(10px);
+  cursor: default;
+  transition: all 0.2s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.view-counter-pill:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: var(--gold);
+}
+
+.view-counter-icon {
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+@media (max-width: 1400px) {
+  .site-header-inner { gap: 12px; }
+  .desktop-nav { gap: 10px; }
   .desktop-nav a { font-size: 10.5px; }
+  .header-map { display: none; }
+}
+
+@media (max-width: 1280px) {
   .social-grid { gap: 75px; }
   .utility-link { grid-template-columns: minmax(0, 1fr) 18px; }
   .utility-link strong { grid-column: 1; grid-row: 2; }
   .utility-link svg { grid-column: 2; grid-row: 1 / 3; }
 }
 
-@media (max-width: 1100px) {
+@media (max-width: 1200px) {
   .desktop-nav,
   .header-map { display: none; }
 
   .menu-toggle {
     display: grid;
-    width: 42px;
-    height: 42px;
+    width: 38px;
+    height: 38px;
     flex: none;
     place-items: center;
-    border: 1px solid rgba(255, 255, 255, 0.58);
+    border: 1px solid rgba(255, 255, 255, 0.4);
     color: white;
-    background: transparent;
+    background: rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
   }
 
   .mobile-menu {
