@@ -4277,3 +4277,95 @@ html.dark .bsky-feed-wrapper {
 html.dark .bsky-post-card {
   background: rgba(255,255,255,0.03);
 }
+
+/* Bluesky Profile Banner */
+.bsky-profile-banner {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, rgba(2, 133, 255, 0.18) 0%, rgba(2, 133, 255, 0.06) 100%);
+  border: 1.5px solid rgba(2, 133, 255, 0.45);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+}
+
+.bsky-profile-banner:hover {
+  background: linear-gradient(135deg, rgba(2, 133, 255, 0.28) 0%, rgba(2, 133, 255, 0.1) 100%);
+  border-color: #0285FF;
+  transform: translateY(-1px);
+}
+
+.bsky-profile-avatar-wrap {
+  flex-shrink: 0;
+}
+
+.bsky-profile-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: #0285FF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  box-shadow: 0 4px 14px rgba(2, 133, 255, 0.4);
+}
+
+.bsky-profile-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bsky-profile-info strong {
+  font-size: 15px;
+  font-weight: 800;
+  color: #fff;
+}
+
+.bsky-profile-info span {
+  font-size: 11px;
+  color: #0285FF;
+  font-weight: 700;
+}
+
+.bsky-profile-info p {
+  font-size: 11.5px;
+  color: rgba(255,255,255,0.55);
+  margin: 4px 0 0;
+  line-height: 1.4;
+}
+
+.bsky-profile-follow {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  background: #0285FF;
+  border-radius: 999px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 12px rgba(2, 133, 255, 0.4);
+  transition: background 0.2s ease;
+}
+
+.bsky-profile-banner:hover .bsky-profile-follow {
+  background: #0070e0;
+}
+
+@media (max-width: 600px) {
+  .bsky-profile-banner {
+    flex-wrap: wrap;
+  }
+  .bsky-profile-follow {
+    width: 100%;
+    justify-content: center;
+  }
+}

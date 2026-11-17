@@ -103,26 +103,40 @@ export function BlueskyFeed() {
     setLoading(true);
     setError(false);
     try {
-      // Bluesky public API — авторизация керек емес
-      const queries = ["#Qulsary", "#Zhylyoi", "Кулсары", "Qulsary"];
       const allPosts: BskyPost[] = [];
       const seen = new Set<string>();
 
+      const addPosts = (items: BskyPost[]) => {
+        for (const item of items) {
+          if (!seen.has(item.cid)) {
+            seen.add(item.cid);
+            allPosts.push(item);
+          }
+        }
+      };
+
+      // 1) Алдымен @jylyoi.bsky.social профилінің посттары
+      try {
+        const profileRes = await fetch(
+          "https://public.api.bsky.app/xrpc/app.bsky.feed.getAuthorFeed?actor=jylyoi.bsky.social&limit=12"
+        );
+        if (profileRes.ok) {
+          const profileData = await profileRes.json();
+          const profilePosts = (profileData.feed || []).map((f: any) => f.post);
+          addPosts(profilePosts);
+        }
+      } catch { /* ignore */ }
+
+      // 2) #Qulsary, #Zhylyoi хештегтері
+      const queries = ["#Qulsary", "#Zhylyoi", "Кулсары"];
       for (const q of queries) {
         try {
-          const url = `https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=${encodeURIComponent(q)}&limit=8&sort=latest`;
+          const url = `https://public.api.bsky.app/xrpc/app.bsky.feed.searchPosts?q=${encodeURIComponent(q)}&limit=6&sort=latest`;
           const res = await fetch(url);
           if (!res.ok) continue;
           const data = await res.json();
-          for (const item of data.posts || []) {
-            if (!seen.has(item.cid)) {
-              seen.add(item.cid);
-              allPosts.push(item);
-            }
-          }
-        } catch {
-          // ignore individual query errors
-        }
+          addPosts(data.posts || []);
+        } catch { /* ignore */ }
       }
 
       // Уақыт бойынша сұрыптау
@@ -156,6 +170,27 @@ export function BlueskyFeed() {
 
   return (
     <div className="bsky-feed-wrapper">
+      {/* Профиль баннері — @jylyoi.bsky.social */}
+      <a
+        href="https://bsky.app/profile/jylyoi.bsky.social"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="bsky-profile-banner"
+      >
+        <div className="bsky-profile-avatar-wrap">
+          <div className="bsky-profile-logo">🦋</div>
+        </div>
+        <div className="bsky-profile-info">
+          <strong>Жылыой Тынысы</strong>
+          <span>@jylyoi.bsky.social</span>
+          <p>Құлсары қаласы мен Жылыой ауданының ашық цифрлық мінбері · AT Protocol</p>
+        </div>
+        <div className="bsky-profile-follow">
+          <ArrowUpRight size={16} />
+          {lang === "kz" ? "Жазылу" : lang === "ru" ? "Подписаться" : "Follow"}
+        </div>
+      </a>
+
       {/* Header */}
       <div className="bsky-feed-header">
         <div>
