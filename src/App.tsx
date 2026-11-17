@@ -36,15 +36,16 @@ const mapDirections = (origin: string) =>
 
 function Brand({ onClick }: { onClick?: () => void }) {
   return (
-    <a className="brand" href="#home" aria-label="Құлсары - басты бет" onClick={onClick}>
+    <a className="brand" href="#home" aria-label="Жылыой Тынысы - басты бет" onClick={onClick}>
       <img
-        src="/images/zhylyoi-emblem.png"
-        alt="Жылыой ауданының елтаңбасы"
+        src="/images/zhylyoi-tynysy-emblem.jpg"
+        alt="«Жылыой Тынысы» қоғамдық қорының эмблемасы"
         className="brand-emblem-img"
+        style={{ borderRadius: "50%", objectFit: "cover", border: "2px solid var(--gold)" }}
       />
       <span className="brand-words">
-        <strong>ҚҰЛСАРЫ</strong>
-        <small>ЖЫЛЫОЙ · АТЫРАУ</small>
+        <strong>ЖЫЛЫОЙ ТЫНЫСЫ</strong>
+        <small>ҚОҒАМДЫҚ ҚОРЫ · ЦИФРЛЫҚ ПОРТАЛ</small>
       </span>
     </a>
   );
@@ -297,6 +298,14 @@ function AppMain() {
   ];
 
   const socialLinks = [
+    {
+      icon: MessageCircle,
+      platform: "РЕСМИ БАЙЛАНЫС / ҮЕҰ",
+      title: "«Жылыой Тынысы» Қоғамдық Қоры",
+      detail: "jylyoi.tynysy@mail.ru · Халық игілігі мен дамуы жолында",
+      href: "mailto:jylyoi.tynysy@mail.ru",
+      color: "#E8AE58",
+    },
     {
       icon: BlueskyIcon,
       platform: "BLUESKY · AT PROTOCOL (ЖАҢА ДӘУІР)",

@@ -978,6 +978,27 @@ export function CityHubPortal() {
                 <p>{lang === "kz" ? "Жылыойдағы ЖК мен ЖШС құқығын қорғау, мемлекеттік гранттар, субсидиялар мен жеңілдетілген несиелер бойынша кеңес." : lang === "ru" ? "Поддержка предпринимателей Жылыойского района, субсидии, льготные кредиты и защита бизнеса." : "Chamber of Entrepreneurs in Zhylyoi: local business support, subsidies, and legal protection."}</p>
                 <a href="https://atameken.kz/" target="_blank" rel="noopener noreferrer" className="civil-card-link">atameken.kz <ExternalLink size={13} /></a>
               </div>
+
+              <div className="civil-card" style={{ border: "1.5px solid var(--gold)", background: "linear-gradient(135deg, rgba(232, 174, 88, 0.1) 0%, rgba(16, 30, 34, 0.95) 100%)" }}>
+                <div className="civil-card-num" style={{ background: "var(--gold)", color: "#101e22" }}>04</div>
+                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                  <img src="/images/zhylyoi-tynysy-emblem.jpg" alt="«Жылыой Тынысы» логотипі" style={{ width: "36px", height: "36px", borderRadius: "50%", objectFit: "cover", border: "1.5px solid var(--gold)" }} />
+                  <h4 style={{ margin: 0, color: "var(--gold)" }}>«Жылыой Тынысы» Қоғамдық Қоры</h4>
+                </div>
+                <p>
+                  {lang === "kz"
+                    ? "Үкіметтік емес ұйым (ҮЕҰ). «Халық игілігі мен дамуы жолында» ұранымен аймақтағы әлеуметтік, ақпараттық және қайырымдылық бастамаларды үйлестіруші орталық."
+                    : lang === "ru"
+                    ? "Неправительственная организация (НПО). Объединение социальных, информационных и благотворительных инициатив под девизом «Во благо народа и развития»."
+                    : "Non-Governmental Organization (NGO). Coordinating public, social and technological initiatives under the motto «For the Well-being and Advancement of the People»."}
+                </p>
+                <div style={{ display: "flex", flexWrap: "wrap", gap: "10px", marginTop: "12px", alignItems: "center" }}>
+                  <a href="mailto:jylyoi.tynysy@mail.ru" className="civil-card-link" style={{ background: "var(--gold)", color: "#101e22", padding: "6px 12px", borderRadius: "6px", fontWeight: 800, textDecoration: "none" }}>
+                    ✉ jylyoi.tynysy@mail.ru
+                  </a>
+                  <span style={{ fontSize: "11px", color: "rgba(255,255,255,0.75)", fontWeight: 700 }}>ҮЕҰ / NGO · РЕСМИ</span>
+                </div>
+              </div>
             </div>
           </div>
         )}
