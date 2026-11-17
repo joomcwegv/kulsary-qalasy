@@ -1,8 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;1,400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Noto+Serif:ital,wght@0,400;1,400&display=swap&subset=cyrillic,cyrillic-ext");
 @import "tailwindcss";
 
 :root {
-  font-family: "Manrope", Arial, sans-serif;
+  font-family: "Manrope", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   color: #1a292b;
   background: #f7f4ed;
   font-synthesis: none;
@@ -1340,6 +1340,10 @@ figcaption {
   .desktop-nav { gap: 8px; }
   .desktop-nav a { font-size: 10.5px; }
   .header-map { display: none; }
+  /* Тек toggle track көрінсін, мәтін жасырулы */
+  .theme-toggle-text { display: none; }
+  /* Weather city label жасыру — тек темп + икон */
+  .weather-city-label { display: none; }
 }
 
 @media (max-width: 1260px) {
@@ -2445,11 +2449,20 @@ figcaption {
   align-items: center;
   gap: 4px;
   padding: 3px 8px;
-  background: #f4efe4;
+  background: rgba(23, 40, 43, 0.08);
   border-radius: 4px;
   font-size: 10px;
   font-weight: 600;
-  color: var(--oil);
+  color: #17282b;
+  border: 1px solid rgba(23, 40, 43, 0.1);
+  transition: all 0.2s ease;
+}
+
+html.dark .settlement-tag,
+[data-theme="dark"] .settlement-tag {
+  background: rgba(255, 255, 255, 0.08);
+  color: #e2e8f0;
+  border-color: rgba(255, 255, 255, 0.14);
 }
 
 .settlement-footer {
@@ -3655,6 +3668,7 @@ figcaption {
   cursor: pointer;
   transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   outline: none;
+  flex-shrink: 0;
 }
 
 .theme-toggle-btn:hover {

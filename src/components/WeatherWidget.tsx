@@ -155,7 +155,7 @@ export function HeaderWeather({
     <div className={`header-weather-wrapper ${isScrolled ? "header-weather-scrolled" : ""}`}>
       <button
         type="button"
-        className={`header-weather-pill ${isScrolled ? "pill-scrolled-expanded" : ""}`}
+        className="header-weather-pill"
         onClick={() => setOpen(!open)}
         aria-expanded={open}
         title={`${t.weather.city} · ${desc}`}
@@ -163,20 +163,6 @@ export function HeaderWeather({
         <span className="weather-icon-box">{getWeatherIcon(weather.condition, 16)}</span>
         <span className="weather-temp">{weather.temp > 0 ? `+${weather.temp}` : weather.temp}°C</span>
         <span className="weather-city-label">{t.weather.city}</span>
-
-        {/* When page is scrolled, show full live weather stats right at the top so it never disappears! */}
-        {isScrolled && (
-          <span className="weather-scrolled-stats">
-            <span className="weather-scrolled-desc">{desc}</span>
-            <span className="weather-scrolled-item" title={t.weather.wind}>
-              <Wind size={12} /> {weather.windSpeed} {t.weather.windUnit}
-            </span>
-            <span className="weather-scrolled-item" title={t.weather.humidity}>
-              <Droplets size={12} /> {weather.humidity}%
-            </span>
-          </span>
-        )}
-
         <ChevronDown size={13} className={`weather-chevron ${open ? "rotate-180" : ""}`} />
       </button>
 
