@@ -107,7 +107,7 @@ const oilOperators: OilOperator[] = [
     workforce: "40 000+ маман",
     careerLink: "https://tengizchevroil.com/careers",
     fields: ["Теңіз кені", "Королев кені", "ТШО Зауыты"],
-    logo: "/images/logo-tco.svg",
+    logo: "/images/tco-emblem-official.jpg",
     bgImage: "/images/bg-tco.jpg",
     accentColor: "#0ea5e9",
   },

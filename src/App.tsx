@@ -751,18 +751,18 @@ function AppMain() {
               </div>
             </div>
             <div className="youth-image" data-reveal style={{ minHeight: "822px", padding: "24px 24px 24px 0" }}>
-              <div style={{ position: "relative", overflow: "hidden", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.15)", height: "100%", minHeight: "720px", background: "#101e22" }}>
+              <div style={{ position: "relative", overflow: "hidden", borderRadius: "16px", border: "1px solid rgba(255,255,255,0.18)", height: "100%", minHeight: "720px", background: "#101e22", display: "flex", alignItems: "center", justifyContent: "center" }}>
                 <img
-                  src="/images/qulsary-hero.jpg"
-                  alt="Құлсары қаласының көркем келбеті мен панорамасы"
-                  style={{ width: "100%", height: "100%", objectFit: "cover", objectPosition: "center 55%" }}
+                  src="/images/zhylyoi-info-map.jpg"
+                  alt="Жылыой ауданының ресми паспорты мен инфографикасы"
+                  style={{ width: "100%", height: "100%", objectFit: "contain", background: "#ffffff", padding: "12px" }}
                 />
-                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "24px 28px", background: "linear-gradient(to top, rgba(0,0,0,0.92) 0%, rgba(0,0,0,0.55) 60%, transparent 100%)", color: "#fff" }}>
+                <div style={{ position: "absolute", bottom: 0, left: 0, right: 0, padding: "20px 24px", background: "linear-gradient(to top, rgba(16,30,34,0.95) 0%, rgba(16,30,34,0.7) 60%, transparent 100%)", color: "#fff" }}>
                   <span style={{ fontSize: "11px", fontWeight: 800, color: "var(--gold)", letterSpacing: "0.08em", display: "block", textTransform: "uppercase" }}>
-                    {lang === "kz" ? "ҚАЛА ТЫНЫСЫ" : lang === "ru" ? "ПАНОРАМА ГОРОДА" : "CITY LIFE"}
+                    {lang === "kz" ? "РЕСМИ ПАСПОРТ" : lang === "ru" ? "ОФИЦИАЛЬНЫЙ ПАСПОРТ" : "OFFICIAL DATA"}
                   </span>
-                  <strong style={{ fontSize: "16px", fontWeight: 700 }}>
-                    {lang === "kz" ? "✨ Құлсары қаласының көркем келбеті мен заманауи дамуы" : lang === "ru" ? "✨ Живописный облик и современное развитие города Кульсары" : "✨ Beautiful Skyline & Modern Growth of Kulsary"}
+                  <strong style={{ fontSize: "15px", fontWeight: 700 }}>
+                    {lang === "kz" ? "📊 Жылыой ауданы: халық саны, ауылдар және ресми картасы" : lang === "ru" ? "📊 Жылыойский район: население, округа и официальная карта" : "📊 Zhylyoi District: Demographics, Territory & Map"}
                   </strong>
                 </div>
               </div>
@@ -813,6 +813,17 @@ function AppMain() {
 
             <div className="services-grid">
               <div className="official-info" data-reveal>
+                <div style={{ marginBottom: "16px", borderRadius: "12px", overflow: "hidden", border: "1px solid rgba(255,255,255,0.18)", background: "#101e22", boxShadow: "0 6px 18px rgba(0,0,0,0.3)" }}>
+                  <img
+                    src="/images/akimat-building.jpg"
+                    alt="Жылыой ауданы әкімдігінің ресми ғимараты"
+                    style={{ width: "100%", height: "190px", objectFit: "cover", objectPosition: "center 45%" }}
+                  />
+                  <div style={{ padding: "8px 12px", background: "rgba(16,30,34,0.92)", fontSize: "11px", color: "var(--gold)", fontWeight: 700, display: "flex", alignItems: "center", justifyContent: "space-between" }}>
+                    <span>🏛️ Жылыой ауданы әкімдігінің ғимараты</span>
+                    <span style={{ color: "rgba(255,255,255,0.6)" }}>Құлсары қаласы</span>
+                  </div>
+                </div>
                 <p className="column-label">{t.services.officialTitle}</p>
                 <h3>{t.services.officialAkimat}</h3>
                 <p className="official-description">{t.services.officialDesc}</p>
