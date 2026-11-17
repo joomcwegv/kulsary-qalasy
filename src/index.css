@@ -665,10 +665,11 @@ figcaption {
   border-color: var(--gold-deep);
 }
 
+/* Youth section — фон мен мәтін режимге байланысты емес, әрқашан қара */
 .youth-section {
   overflow: hidden;
-  color: var(--cream);
-  background: var(--oil);
+  color: #f7f4ed;
+  background: #17282b;
 }
 
 .youth-grid {
@@ -742,7 +743,7 @@ figcaption {
 }
 
 .light-link {
-  color: var(--cream);
+  color: #f7f4ed;
 }
 
 .subtle-link {
@@ -796,9 +797,10 @@ figcaption {
   line-height: 1.6;
 }
 
+/* Services section — фон мен мәтін бекітілген, режимге байланысты емес */
 .services-section {
-  color: var(--cream);
-  background: var(--oil);
+  color: #f7f4ed;
+  background: #17282b;
 }
 
 .services-heading {
@@ -879,7 +881,7 @@ figcaption {
 
 .official-site-link {
   margin-top: 21px;
-  color: var(--cream);
+  color: #f7f4ed;
 }
 
 .city-office {
@@ -1113,8 +1115,8 @@ figcaption {
 .footer {
   padding-top: 110px;
   padding-bottom: 33px;
-  color: var(--cream);
-  background: var(--deep-oil);
+  color: #f7f4ed;
+  background: #0d1c1f;
 }
 
 .footer-main {
