@@ -4369,3 +4369,135 @@ html.dark .bsky-post-card {
     justify-content: center;
   }
 }
+
+/* ========================================================
+   COMPACT BLUESKY PROFILE CARD
+   ======================================================== */
+.bsky-profile-card-simple {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 20px 28px;
+  background: linear-gradient(135deg, rgba(2, 133, 255, 0.12) 0%, rgba(16, 30, 34, 0.7) 100%);
+  border: 1.5px solid rgba(2, 133, 255, 0.35);
+  border-radius: 18px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.25s ease;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.bsky-profile-card-simple:hover {
+  background: linear-gradient(135deg, rgba(2, 133, 255, 0.22) 0%, rgba(16, 30, 34, 0.85) 100%);
+  border-color: #0285FF;
+  transform: translateY(-2px);
+  box-shadow: 0 14px 36px rgba(2, 133, 255, 0.2);
+}
+
+.bsky-profile-card-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  flex: 1;
+}
+
+.bsky-profile-card-avatar-wrap {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.bsky-profile-card-avatar {
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid var(--gold);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  display: block;
+}
+
+.bsky-profile-card-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0285FF;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #101e22;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.bsky-profile-card-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.bsky-profile-card-name-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.bsky-profile-card-name-row strong {
+  font-size: 16px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.01em;
+}
+
+.bsky-profile-card-name-row span {
+  font-size: 12px;
+  color: #38bdf8;
+  font-weight: 700;
+}
+
+.bsky-profile-card-info p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+}
+
+.bsky-profile-card-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: #0285FF;
+  border-radius: 9999px;
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 800;
+  flex-shrink: 0;
+  box-shadow: 0 4px 14px rgba(2, 133, 255, 0.4);
+  transition: all 0.2s ease;
+}
+
+.bsky-profile-card-simple:hover .bsky-profile-card-btn {
+  background: #0070e0;
+  transform: scale(1.03);
+}
+
+@media (max-width: 768px) {
+  .bsky-profile-card-simple {
+    flex-direction: column;
+    align-items: stretch;
+    padding: 18px 20px;
+    gap: 16px;
+  }
+
+  .bsky-profile-card-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}

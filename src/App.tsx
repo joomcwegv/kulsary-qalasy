@@ -26,7 +26,6 @@ import { CityHubPortal } from "./components/CityHubPortal";
 import { LanguageProvider, useLanguage, LanguageSwitcher } from "./components/LanguageContext";
 import { ThemeProvider, ThemeToggle } from "./components/ThemeContext";
 import { ViewCounter } from "./components/ViewCounter";
-import { BlueskyFeed } from "./components/BlueskyFeed";
 import { Language } from "./i18n/translations";
 
 const cityQuery = "Құлсары, Атырау облысы, Қазақстан";
@@ -769,11 +768,6 @@ function AppMain() {
               </div>
             </div>
           </div>
-
-          {/* Live Bluesky Feed — #Qulsary посттары */}
-          <div className="page-container" data-reveal>
-            <BlueskyFeed />
-          </div>
         </section>
 
         {/* 07. Family Section */}
@@ -801,11 +795,6 @@ function AppMain() {
                 <p className="family-note">{t.family.note}</p>
               </div>
             </div>
-          </div>
-
-          {/* Live Bluesky Feed — #Qulsary посттары */}
-          <div className="page-container" data-reveal>
-            <BlueskyFeed />
           </div>
         </section>
 
@@ -902,106 +891,45 @@ function AppMain() {
             </div>
           </div>
 
-          {/* Interactive Bluesky & Community Tribune Banner */}
+          {/* Bluesky Profile Card — @jylyoi.bsky.social */}
           <div className="page-container" style={{ marginTop: "36px" }} data-reveal>
-            <div style={{
-              background: "linear-gradient(135deg, rgba(2, 133, 255, 0.12) 0%, rgba(16, 30, 34, 0.85) 100%)",
-              border: "1.5px solid rgba(2, 133, 255, 0.35)",
-              borderRadius: "16px",
-              padding: "28px 32px",
-              display: "flex",
-              flexWrap: "wrap",
-              alignItems: "center",
-              justifyContent: "space-between",
-              gap: "24px",
-              boxShadow: "0 10px 30px rgba(2, 133, 255, 0.08)",
-            }}>
-              <div style={{ maxWidth: "680px" }}>
-                <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                  <div style={{
-                    width: "38px",
-                    height: "38px",
-                    borderRadius: "10px",
-                    background: "#0285FF",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    color: "#ffffff",
-                    boxShadow: "0 4px 12px rgba(2, 133, 255, 0.4)",
-                  }}>
-                    <BlueskyIcon size={22} />
-                  </div>
-                  <div>
-                    <h3 style={{ fontSize: "18px", fontWeight: 800, margin: 0, color: "var(--deep-oil)" }}>
-                      Bluesky (AT Protocol) — Құлсарының ашық цифрлық мінбері 🦋
-                    </h3>
-                    <span style={{ fontSize: "11px", fontWeight: 700, color: "#0285FF", letterSpacing: "0.05em" }}>
-                      ДЕЦЕНТРАЛИЗАЦИЯЛАНҒАН АШЫҚ ЖЕЛІ · ЦЕНЗУРАСЫЗ &amp; ЖАРНАМАСЫЗ
-                    </span>
-                  </div>
+            <a
+              href="https://bsky.app/profile/jylyoi.bsky.social"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bsky-profile-card-simple"
+            >
+              <div className="bsky-profile-card-left">
+                <div className="bsky-profile-card-avatar-wrap">
+                  <img
+                    src="/images/zhylyoi-tynysy-emblem.jpg"
+                    alt="Жылыой Тынысы"
+                    className="bsky-profile-card-avatar"
+                  />
+                  <span className="bsky-profile-card-badge" title="Bluesky">
+                    <BlueskyIcon size={12} />
+                  </span>
                 </div>
-                <p style={{ fontSize: "13px", lineHeight: "1.6", color: "var(--muted)", margin: 0 }}>
-                  {lang === "kz"
-                    ? "Bluesky желісінде қазақша контент пен жергілікті қауымдастықты бірінші болып Құлсарыдан бастайық! Әрбір тұрғын #Qulsary немесе #Zhylyoi хештегімен ой-пікірін, қалалық жаңалықтар мен фотоларды еркін бөлісе алады."
-                    : lang === "ru"
-                    ? "Начнем развивать казахскоязычный контент и городское сообщество в децентрализованной сети Bluesky первыми из Кульсары! Делитесь мыслями, фото и новостями города с тегом #Qulsary."
-                    : "Pioneering the open AT Protocol network for Kulsary! Share town updates, community discussions, and stories using #Qulsary and #Zhylyoi without corporate algorithm locks."}
-                </p>
+                <div className="bsky-profile-card-info">
+                  <div className="bsky-profile-card-name-row">
+                    <strong>Жылыой Тынысы</strong>
+                    <span>@jylyoi.bsky.social</span>
+                  </div>
+                  <p>
+                    {lang === "kz"
+                      ? "Bluesky-дегі ресми ашық парақшамыз · Қалалық жаңалықтар, бастамалар және тұрғындар мінбері"
+                      : lang === "ru"
+                      ? "Официальная открытая страница в Bluesky · Городские новости, инициативы и открытая трибуна"
+                      : "Official open page on Bluesky · City news, citizen initiatives & civic discourse"}
+                  </p>
+                </div>
               </div>
-
-              <div style={{ display: "flex", flexWrap: "wrap", alignItems: "center", gap: "12px" }}>
-                <a
-                  href="https://bsky.app/intent/compose?text=%23Qulsary+%23Zhylyoi+%D2%9A%D2%B1%D0%BB%D1%81%D0%B0%D1%80%D1%8B+"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    background: "#0285FF",
-                    color: "#ffffff",
-                    padding: "11px 20px",
-                    borderRadius: "8px",
-                    fontSize: "13px",
-                    fontWeight: 800,
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "8px",
-                    boxShadow: "0 4px 14px rgba(2, 133, 255, 0.35)",
-                    transition: "transform 0.15s ease",
-                  }}
-                >
-                  <BlueskyIcon size={16} />
-                  <span>{lang === "kz" ? "#Qulsary деп жазу" : lang === "ru" ? "Написать с #Qulsary" : "Post to #Qulsary"}</span>
-                  <ArrowUpRight size={14} />
-                </a>
-
-                <a
-                  href="https://bsky.app/search?q=kulsary"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  style={{
-                    background: "rgba(255, 255, 255, 0.12)",
-                    color: "var(--deep-oil)",
-                    border: "1px solid rgba(2, 133, 255, 0.4)",
-                    padding: "11px 18px",
-                    borderRadius: "8px",
-                    fontSize: "13px",
-                    fontWeight: 700,
-                    textDecoration: "none",
-                    display: "inline-flex",
-                    alignItems: "center",
-                    gap: "6px",
-                  }}
-                >
-                  <span>{lang === "kz" ? "Қалалық лентаны көру" : lang === "ru" ? "Смотреть ленту" : "View City Feed"}</span>
-                  <ArrowUpRight size={14} />
-                </a>
+              <div className="bsky-profile-card-btn">
+                <BlueskyIcon size={16} />
+                <span>{lang === "kz" ? "Жазылу" : lang === "ru" ? "Подписаться" : "Follow"}</span>
+                <ArrowUpRight size={15} />
               </div>
-            </div>
-          </div>
-
-          {/* Live Bluesky Feed — #Qulsary посттары */}
-          <div className="page-container" data-reveal>
-            <BlueskyFeed />
+            </a>
           </div>
         </section>
       </main>
