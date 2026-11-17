@@ -3945,3 +3945,335 @@ html.dark .site-footer {
 
 
 
+
+/* ========================================================
+   BLUESKY LIVE FEED
+   ======================================================== */
+.bsky-feed-wrapper {
+  margin-top: 40px;
+  padding: 28px 32px;
+  background: rgba(2, 133, 255, 0.06);
+  border: 1px solid rgba(2, 133, 255, 0.25);
+  border-radius: 20px;
+}
+
+.bsky-feed-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-bottom: 24px;
+}
+
+.bsky-feed-title {
+  font-size: 17px;
+  font-weight: 800;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+.bsky-feed-subtitle {
+  font-size: 11px;
+  color: #0285FF;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  margin: 4px 0 0;
+}
+
+.bsky-updated-label {
+  font-size: 11px;
+  color: rgba(255,255,255,0.45);
+}
+
+.bsky-refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 14px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.bsky-refresh-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.15);
+  border-color: #0285FF;
+}
+
+.bsky-refresh-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.bsky-post-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 7px 16px;
+  background: #0285FF;
+  border-radius: 8px;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 14px rgba(2, 133, 255, 0.35);
+}
+
+.bsky-post-btn:hover {
+  background: #0070e0;
+  transform: translateY(-1px);
+}
+
+@keyframes bsky-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.bsky-spin {
+  animation: bsky-spin 0.8s linear infinite;
+}
+
+/* Loading skeleton */
+.bsky-loading {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.bsky-skeleton-card {
+  display: flex;
+  gap: 10px;
+  padding: 16px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  border: 1px solid rgba(255,255,255,0.08);
+}
+
+.bsky-skeleton-avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  flex-shrink: 0;
+  animation: bsky-pulse 1.5s ease infinite;
+}
+
+.bsky-skeleton-lines {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.bsky-skeleton-line {
+  height: 10px;
+  border-radius: 5px;
+  background: rgba(255,255,255,0.1);
+  animation: bsky-pulse 1.5s ease infinite;
+}
+
+@keyframes bsky-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+
+/* Error & Empty states */
+.bsky-error,
+.bsky-empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 40px 20px;
+  color: rgba(255,255,255,0.6);
+  font-size: 14px;
+  text-align: center;
+}
+
+.bsky-empty span {
+  font-size: 36px;
+}
+
+/* Posts grid */
+.bsky-posts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+}
+
+.bsky-post-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(2, 133, 255, 0.18);
+  border-radius: 14px;
+  text-decoration: none;
+  color: inherit;
+  transition: all 0.2s ease;
+  cursor: pointer;
+}
+
+.bsky-post-card:hover {
+  background: rgba(2, 133, 255, 0.1);
+  border-color: rgba(2, 133, 255, 0.45);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(2, 133, 255, 0.15);
+}
+
+.bsky-post-author {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.bsky-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid rgba(2, 133, 255, 0.4);
+}
+
+.bsky-avatar-placeholder {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0285FF, #005bbf);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  font-weight: 800;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.bsky-author-info {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.bsky-author-info strong {
+  font-size: 12px;
+  font-weight: 800;
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bsky-author-info span {
+  font-size: 10px;
+  color: rgba(255,255,255,0.45);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.bsky-post-time {
+  font-size: 10px;
+  color: rgba(255,255,255,0.4);
+  flex-shrink: 0;
+  white-space: nowrap;
+}
+
+.bsky-post-text {
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: rgba(255,255,255,0.85);
+  margin: 0;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.bsky-post-stats {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 11px;
+  color: rgba(255,255,255,0.4);
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+
+.bsky-post-stats span {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.bsky-card-arrow {
+  margin-left: auto;
+  color: #0285FF;
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.bsky-post-card:hover .bsky-card-arrow {
+  opacity: 1;
+}
+
+.bsky-view-all {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #0285FF;
+  font-size: 13px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 10px 20px;
+  border: 1px solid rgba(2, 133, 255, 0.35);
+  border-radius: 999px;
+  transition: all 0.2s ease;
+}
+
+.bsky-view-all:hover {
+  background: rgba(2, 133, 255, 0.12);
+  border-color: #0285FF;
+}
+
+@media (max-width: 1024px) {
+  .bsky-posts-grid,
+  .bsky-loading {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .bsky-feed-wrapper {
+    padding: 20px 16px;
+  }
+  .bsky-posts-grid,
+  .bsky-loading {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Dark mode adjustments */
+html.dark .bsky-feed-wrapper {
+  background: rgba(2, 133, 255, 0.04);
+  border-color: rgba(2, 133, 255, 0.2);
+}
+
+html.dark .bsky-post-card {
+  background: rgba(255,255,255,0.03);
+}

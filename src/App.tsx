@@ -26,6 +26,7 @@ import { CityHubPortal } from "./components/CityHubPortal";
 import { LanguageProvider, useLanguage, LanguageSwitcher } from "./components/LanguageContext";
 import { ThemeProvider, ThemeToggle } from "./components/ThemeContext";
 import { ViewCounter } from "./components/ViewCounter";
+import { BlueskyFeed } from "./components/BlueskyFeed";
 import { Language } from "./i18n/translations";
 
 const cityQuery = "Құлсары, Атырау облысы, Қазақстан";
@@ -768,6 +769,11 @@ function AppMain() {
               </div>
             </div>
           </div>
+
+          {/* Live Bluesky Feed — #Qulsary посттары */}
+          <div className="page-container" data-reveal>
+            <BlueskyFeed />
+          </div>
         </section>
 
         {/* 07. Family Section */}
@@ -795,6 +801,11 @@ function AppMain() {
                 <p className="family-note">{t.family.note}</p>
               </div>
             </div>
+          </div>
+
+          {/* Live Bluesky Feed — #Qulsary посттары */}
+          <div className="page-container" data-reveal>
+            <BlueskyFeed />
           </div>
         </section>
 
@@ -986,6 +997,11 @@ function AppMain() {
                 </a>
               </div>
             </div>
+          </div>
+
+          {/* Live Bluesky Feed — #Qulsary посттары */}
+          <div className="page-container" data-reveal>
+            <BlueskyFeed />
           </div>
         </section>
       </main>
