@@ -27,6 +27,7 @@ import { LanguageProvider, useLanguage, LanguageSwitcher } from "./components/La
 import { ThemeProvider, ThemeToggle } from "./components/ThemeContext";
 import { ViewCounter } from "./components/ViewCounter";
 import { CommunitySocialFeed } from "./components/CommunitySocialFeed";
+import { CommunityForum } from "./components/CommunityForum";
 import { Language } from "./i18n/translations";
 
 const cityQuery = "Құлсары, Атырау облысы, Қазақстан";
@@ -204,6 +205,11 @@ function AppMain() {
     { label: t.nav.places, href: "#places" },
     { label: t.nav.life, href: "#life" },
     { label: t.nav.services, href: "#services" },
+    {
+      label:
+        lang === "kz" ? "Пікірталас (Форум)" : lang === "ru" ? "Форум" : "Forum",
+      href: "#forum",
+    },
     { label: t.nav.social, href: "#social" },
   ];
 
@@ -861,6 +867,30 @@ function AppMain() {
               <span className="petition-main"><strong>{t.services.petitionTitle}</strong><span>{t.services.petitionDesc}</span></span>
               <span className="petition-arrow"><ArrowUpRight size={27} strokeWidth={1.5} aria-hidden="true" /></span>
             </a>
+          </div>
+        </section>
+
+        {/* 08-B. Forum Section — Пікірталас & Қоғамдық бұрыштар */}
+        <section className="forum-section section-padding" id="forum" style={{ background: "rgba(23, 40, 43, 0.025)" }}>
+          <div className="page-container">
+            <div data-reveal>
+              <SectionLabel number="08">
+                {lang === "kz" ? "ҚОҒАМДЫҚ КЕҢІСТІК · ХАЛЫҚ ҮНІ" : lang === "ru" ? "ОБЩЕСТВЕННОЕ ПРОСТРАНСТВО · ГОЛОС НАРОДА" : "COMMUNITY SPACE · CITIZENS' VOICE"}
+              </SectionLabel>
+              <h2 className="section-title">
+                {lang === "kz" ? "Пікірталас" : lang === "ru" ? "Форум" : "Discussions"} <em>{lang === "kz" ? "және 5 қоғамдық бұрыш." : lang === "ru" ? "и 5 общественных уголков." : "& 5 community corners."}</em>
+              </h2>
+              <p style={{ maxWidth: "750px", color: "var(--muted)", margin: "0 0 16px 0", fontSize: "16px", lineHeight: 1.6 }}>
+                {lang === "kz"
+                  ? "Ұсыныс, тілек, ақпарат, өтініш және шағым бұрышы — Жылыой жұртшылығы мен қала қонақтарының ашық пікір алмасу алаңы."
+                  : lang === "ru"
+                  ? "Уголок предложений, пожеланий, информации, обращений и жалоб — единое пространство для открытого диалога."
+                  : "Corner for proposals, wishes, announcements, requests, and community feedback."}
+              </p>
+            </div>
+            <div data-reveal>
+              <CommunityForum />
+            </div>
           </div>
         </section>
 
